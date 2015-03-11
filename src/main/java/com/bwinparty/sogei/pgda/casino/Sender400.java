@@ -90,12 +90,12 @@ public class Sender400 extends CsvFileProcessorAbs {
                 httppost.setHeader("Connection", "keep-alive");
                 httppost.setHeader("Content-Type", "application/json");
 
-
+/**
                 httppost.setEntity(new StringEntity("{\"serviceConcessionaireCode\":\" "+fsc+ ",\"senderConcessionaireCode\":\" "+ operator +"  \",\"proposerConcessionaireCode\":\"  " +operator+ "  \",\"gameCode\":\" " +gameCode+ "  \",\"gameType\":\" " + gameType + "  \",\"transactionCode\":\"" + new Date().getTime() + "\",\"softwareModuleBeans\":[{\"code\":\""
                         + code + "\",\"type\":\"" + type + "\",\"id\":\""
                         + id + "\",\"hash\":\"" + hash + "\"}]}"));
-
-            {"serviceConcessionaireCode":"22","senderConcessionaireCode":"15028","proposerConcessionaireCode":"15028","transactionCode":"201503110001","gameCode":"550","gameType":"4","gameSessionId":"","startSessionTime":"11/03/2015 14:34:28","presumedEndSessionDate":"11/03/2015 14:34:30","attributes":[{"code":"BON","value":"B"},{"code":"MNI","value":"1"},{"code":"MXI","value":"100000"}]}HTTP/1.1 200 OK
+**/
+           // {"serviceConcessionaireCode":"22","senderConcessionaireCode":"15028","proposerConcessionaireCode":"15028","transactionCode":"201503110001","gameCode":"550","gameType":"4","gameSessionId":"","startSessionTime":"11/03/2015 14:34:28","presumedEndSessionDate":"11/03/2015 14:34:30","attributes":[{"code":"BON","value":"B"},{"code":"MNI","value":"1"},{"code":"MXI","value":"100000"}]}HTTP/1.1 200 OK
 
                 //System.out.println("Executing request: " + httppost.getRequestLine());
                 CloseableHttpResponse httpResponse = httpclient.execute(httppost);
