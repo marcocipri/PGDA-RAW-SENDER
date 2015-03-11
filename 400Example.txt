@@ -1,0 +1,20 @@
+POST /scc-protocol-backoffice/casino/StartSessionMessage HTTP/1.1
+Host: 10.20.45.216:8080
+Connection: keep-alive
+Content-Length: 379
+Accept: application/json, text/javascript, */*
+Origin: http://10.20.45.216:8080
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36
+Content-Type: application/json
+Referer: http://10.20.45.216:8080/scc-protocol-backoffice/
+Accept-Encoding: gzip, deflate
+Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4
+
+{"serviceConcessionaireCode":"22","senderConcessionaireCode":"15028","proposerConcessionaireCode":"15028","transactionCode":"201503110001","gameCode":"550","gameType":"4","gameSessionId":"","startSessionTime":"11/03/2015 14:34:28","presumedEndSessionDate":"11/03/2015 14:34:30","attributes":[{"code":"BON","value":"B"},{"code":"MNI","value":"1"},{"code":"MXI","value":"100000"}]}HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: application/json
+Content-Length: 221
+Date: Wed, 11 Mar 2015 14:38:14 GMT
+
+{"gameSessionId":"M3ADE20942F74CRA","result":0,"error":false,"serviceConcessionaireCode":22,"senderConcessionaireCode":15028,"proposerConcessionaireCode":15028,"gameCode":550,"gameType":4,"transactionCode":"201503110001"}

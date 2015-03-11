@@ -1,0 +1,55 @@
+POST /scc-protocol-bo/cashgame/SoftwareConfigurationDetailsMessage HTTP/1.1
+Host: 10.20.12.25:8282
+Connection: keep-alive
+Content-Length: 305
+Accept: application/json, text/javascript, */*
+Origin: http://10.20.12.25:8282
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36
+Content-Type: application/json
+Referer: http://10.20.12.25:8282/scc-protocol-bo/
+Accept-Encoding: gzip, deflate
+Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4
+
+{"serviceConcessionaireCode":"37","senderConcessionaireCode":"15028","proposerConcessionaireCode":"15028","gameCode":"0","gameType":"0","transactionCode":"20150127006","softwareModuleBeans":[{"code":"7788","type":"2","id":"magicportals-server-1.0.0.ja","hash":"d23862b96cae4126cb0701b8d7d1ad38bdb0c0d6"}]}HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: application/json
+Content-Length: 185
+Date: Tue, 27 Jan 2015 09:35:35 GMT
+
+{"result":2459,"error":true,"serviceConcessionaireCode":37,"senderConcessionaireCode":15028,"proposerConcessionaireCode":15028,"gameCode":0,"gameType":0,"transactionCode":"20150127006"}POST /scc-protocol-bo/cashgame/SoftwareConfigurationDetailsMessage HTTP/1.1
+Host: 10.20.12.25:8282
+Connection: keep-alive
+Content-Length: 306
+Accept: application/json, text/javascript, */*
+Origin: http://10.20.12.25:8282
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36
+Content-Type: application/json
+Referer: http://10.20.12.25:8282/scc-protocol-bo/
+Accept-Encoding: gzip, deflate
+Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4
+{"serviceConcessionaireCode":"37","senderConcessionaireCode":"15028","proposerConcessionaireCode":"15028","gameCode":"0","gameType":"0","transactionCode":"1422371765880","softwareModuleBeans":[{"code":"46","type":"1","id":"placebets.jsp","hash":"1cf256c35cea27a5bc13f2ab52257fbae9b55125"}HTTP/1.1 400 Bad Request
+
+{"serviceConcessionaireCode":"37","senderConcessionaireCode":"15028","proposerConcessionaireCode":"15028","gameCode":"0","gameType":"0","transactionCode":"20150127007","softwareModuleBeans":[{"code":"7788","type":"2","id":"magicportals-server-1.0.0.jar","hash":"d23862b96cae4126cb0701b8d7d1ad38bdb0c0d6"}]}HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: application/json
+Content-Length: 183
+Date: Tue, 27 Jan 2015 09:35:43 GMT
+
+{"result":0,"error":false,"serviceConcessionaireCode":37,"senderConcessionaireCode":15028,"proposerConcessionaireCode":15028,"gameCode":0,"gameType":0,"transactionCode":"20150127007"}
+
+
+
+POST /scc-protocol-bo/cashgame/SoftwareConfigurationDetailsMessage HTTP/1.1
+Host: accounts.google.com
+User-Agent: testAgent
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Cookie: test
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 288
+Accept-Encoding: gzip,deflate
+
+{"serviceConcessionaireCode":"37","senderConcessionaireCode":"15028","proposerConcessionaireCode":"15028","gameCode":"0","gameType":"0","transactionCode":"1422371765880","softwareModuleBeans":[{"code":"46","type":"1","id":"placebets.jsp","hash":"1cf256c35cea27a5bc13f2ab52257fbae9b55125"}HTTP/1.1 400 Bad Request
