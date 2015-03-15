@@ -2,6 +2,7 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.6
 version = '0.1'
+def httpClientVersion =  '4.3.6'
 
 repositories {
     mavenCentral()
@@ -9,7 +10,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile group: 'org.apache.httpcomponents' , name: 'httpclient' , version: '4.3.6'
+    compile group: 'org.apache.httpcomponents' , name: 'httpclient' , version:  httpClientVersion
     compile group: 'commons-cli' , name: 'commons-cli' , version: '1.2'
     compile group: 'org.apache.commons' , name: 'commons-csv', version: '1.1'
 }
