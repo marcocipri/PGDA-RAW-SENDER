@@ -48,11 +48,15 @@ public class Sender830 extends CsvFileProcessorAbs {
                 System.out.println("--------------------------------------");
 
                 List<String> empData = new ArrayList<String>();
+                String reg = "((<result>)|(</result>))";
+                String response = send(cmd.getUrl(), record.get(fields[0]), record.get(fields[1]), record.get(fields[2]), record.get(fields[3]));
                 empData.add(record.get(fields[0]));
                 empData.add(record.get(fields[1]));
                 empData.add(record.get(fields[2]));
                 empData.add(record.get(fields[3]));
-                empData.add(send(cmd.getUrl(),record.get(fields[0]),record.get(fields[1]),record.get(fields[2]),record.get(fields[3])));
+                String[] result = response.split(reg);
+                empData.add(result[1]);
+                empData.add(response);
 
                 this.printer.print(empData);
                 this.printer.println();
