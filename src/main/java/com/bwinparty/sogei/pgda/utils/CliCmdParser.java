@@ -10,6 +10,10 @@ public class CliCmdParser
     private String input="";
     private String output="";
     private String messageType="";
+    private String operator = "";
+    private String fsc = "";
+
+
 
     public String getUrl() {
         return url;
@@ -29,7 +33,13 @@ public class CliCmdParser
         return input;
     }
 
+    public String getOperator() {
+        return operator;
+    }
 
+    public String getFsc() {
+        return fsc;
+    }
 
 
     public CliCmdParser(String[] args)
@@ -59,6 +69,14 @@ public class CliCmdParser
                 .hasArg()
                 .withDescription("message type, admissible value : 830")
                 .create("m");
+        Option operatorOpt = OptionBuilder.isRequired()
+                .hasArg()
+                .withDescription("operator, admissible value : 15026 15028 15093")
+                .create("p");
+        Option fscOpt = OptionBuilder.isRequired()
+                .hasArg()
+                .withDescription("fsc, admissible value : 26 37")
+                .create("f");
 
 
         Options options = new Options();
@@ -67,6 +85,8 @@ public class CliCmdParser
         options.addOption(inputOpt);
         options.addOption(outputOpt);
         options.addOption(messageTypeOpt);
+        options.addOption(operatorOpt);
+        options.addOption(fscOpt);
 
 
         /**
@@ -106,6 +126,13 @@ public class CliCmdParser
                 }
 
 
+                if (line.hasOption("p")) {
+                    operator = line.getOptionValue("p");
+                }
+
+                if (line.hasOption("f")) {
+                    fsc = line.getOptionValue("f");
+                }
 
             }
         } catch (ParseException exp)

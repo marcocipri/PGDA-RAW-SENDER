@@ -49,7 +49,7 @@ public class Sender830 extends CsvFileProcessorAbs {
 
                 List<String> empData = new ArrayList<String>();
                 String reg = "((<result>)|(</result>))";
-                String response = send(cmd.getUrl(), record.get(fields[0]), record.get(fields[1]), record.get(fields[2]), record.get(fields[3]));
+                String response = send(cmd.getUrl(), record.get(fields[0]), record.get(fields[1]), record.get(fields[2]), record.get(fields[3]), cmd.getOperator(), cmd.getFsc());
                 empData.add(record.get(fields[0]));
                 empData.add(record.get(fields[1]));
                 empData.add(record.get(fields[2]));
@@ -69,7 +69,7 @@ public class Sender830 extends CsvFileProcessorAbs {
         }
     }
 
-    private String  send(String url, String type, String code, String id, String hash ) throws IOException {
+    private String send(String url, String type, String code, String id, String hash, String operator, String fsc) throws IOException {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         String response = "";
         try {
@@ -88,7 +88,9 @@ public class Sender830 extends CsvFileProcessorAbs {
             //
             // FileEntity entity = new FileEntity(file, "binary/octet-stream");
 
-
+            System.out.println("request: " + "{\"serviceConcessionaireCode\":\"" + fsc + "\",\"senderConcessionaireCode\":\"" + operator + "\",\"proposerConcessionaireCode\":\"" + operator + "\",\"gameCode\":\"0\",\"gameType\":\"0\",\"transactionCode\":\"" + new Date().getTime() + "\",\"softwareModuleBeans\":[{\"code\":\""
+                    + code + "\",\"type\":\"" + type + "\",\"id\":\""
+                    + id + "\",\"hash\":\"" + hash + "\"}]}");
 
 
 
@@ -101,10 +103,10 @@ public class Sender830 extends CsvFileProcessorAbs {
                 httppost.setHeader("Cookie", "test");
                 httppost.setHeader("Connection", "keep-alive");
                 httppost.setHeader("Content-Type", "application/json");
-                httppost.setEntity(new StringEntity("{\"serviceConcessionaireCode\":\"37\",\"senderConcessionaireCode\":\"15028\",\"proposerConcessionaireCode\":\"15028\",\"gameCode\":\"0\",\"gameType\":\"0\",\"transactionCode\":\"" + new Date().getTime() + "\",\"softwareModuleBeans\":[{\"code\":\""
+            httppost.setEntity(new StringEntity("{\"serviceConcessionaireCode\":\"" + fsc + "\",\"senderConcessionaireCode\":\"" + operator + "\",\"proposerConcessionaireCode\":\"" + operator + "\",\"gameCode\":\"0\",\"gameType\":\"0\",\"transactionCode\":\"" + new Date().getTime() + "\",\"softwareModuleBeans\":[{\"code\":\""
                         + code + "\",\"type\":\"" + type + "\",\"id\":\""
                         + id + "\",\"hash\":\"" + hash + "\"}]}"));
-                //System.out.println("Executing request: " + httppost.getRequestLine());
+            System.out.println("Executing request: " + httppost.getRequestLine());
                 CloseableHttpResponse httpResponse = httpclient.execute(httppost);
                 try {
                     //System.out.println("----------------------------------------");
